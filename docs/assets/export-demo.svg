@@ -1,0 +1,17 @@
+<svg width="980" height="560" viewBox="0 0 980 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="980" height="560" rx="18" fill="#f6f7f9"/>
+  <rect x="34" y="34" width="912" height="492" rx="14" fill="#ffffff" stroke="#d9dee7"/>
+  <text x="70" y="92" fill="#111827" font-family="Arial, sans-serif" font-size="28" font-weight="700">Feedback Summary</text>
+  <text x="70" y="134" fill="#6b7280" font-family="Arial, sans-serif" font-size="16">Source file: demo-note.md</text>
+  <text x="70" y="162" fill="#6b7280" font-family="Arial, sans-serif" font-size="16">Annotation count: 2</text>
+  <line x1="70" y1="194" x2="884" y2="194" stroke="#e5e7eb"/>
+  <rect x="70" y="228" width="814" height="112" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="96" y="263" fill="#111827" font-family="Arial, sans-serif" font-size="19" font-weight="700">Feedback 1</text>
+  <text x="96" y="296" fill="#374151" font-family="Arial, sans-serif" font-size="15">Original text: "scattered chat messages"</text>
+  <text x="96" y="322" fill="#374151" font-family="Arial, sans-serif" font-size="15">Feedback: Give a concrete example of this pain point.</text>
+  <rect x="70" y="366" width="814" height="112" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="96" y="401" fill="#111827" font-family="Arial, sans-serif" font-size="19" font-weight="700">Feedback 2</text>
+  <text x="96" y="434" fill="#374151" font-family="Arial, sans-serif" font-size="15">Original text: "The gap is not model quality alone"</text>
+  <text x="96" y="460" fill="#374151" font-family="Arial, sans-serif" font-size="15">Feedback: Make this claim less absolute.</text>
+</svg>
+

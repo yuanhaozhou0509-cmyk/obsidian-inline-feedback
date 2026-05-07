@@ -1,0 +1,27 @@
+node_modules/
+backups/
+
+# Obsidian local state and user vault data
+.obsidian/
+data.json
+*.feedback.json
+*.feedback_export.md
+feedback_log.md
+knowledge_cards/
+concept_cards/
+attachments/
+
+# Build and test output
+dist/
+coverage/
+.cache/
+.tmp/
+tmp/
+*.log
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+

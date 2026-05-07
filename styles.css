@@ -1,0 +1,1257 @@
+/* ============================================
+   Inline Feedback Plugin - Styles
+   Uses Obsidian CSS custom properties for theme compatibility
+   ============================================ */
+
+/* ---- Selection Popup ---- */
+
+.inline-feedback-popup {
+  background: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  padding: 8px;
+  min-width: 150px;
+  max-width: 480px;
+  font-family: var(--font-interface);
+}
+
+/* Two-button row (feedback + concept card) */
+.inline-feedback-popup-btn-row {
+  display: flex;
+  gap: 6px;
+}
+
+.inline-feedback-popup-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  border: none;
+  border-radius: 6px;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-size: 13px;
+  font-family: var(--font-interface);
+  white-space: nowrap;
+  transition: background-color 0.15s ease;
+}
+
+.inline-feedback-popup-btn:hover {
+  background: var(--interactive-accent-hover);
+}
+
+.inline-feedback-popup-btn-card {
+  background: var(--background-secondary);
+  color: var(--text-normal);
+  border: 1px solid var(--background-modifier-border);
+}
+
+.inline-feedback-popup-btn-card:hover {
+  background: var(--background-modifier-hover);
+  border-color: var(--interactive-accent);
+  color: var(--interactive-accent);
+}
+
+/* ---- Input Container (expanded popup) ---- */
+
+.inline-feedback-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 380px;
+}
+
+.inline-feedback-drag-handle {
+  height: 6px;
+  background: var(--background-modifier-border);
+  border-radius: 3px;
+  margin: 0 auto 2px;
+  width: 48px;
+  cursor: grab;
+  flex-shrink: 0;
+  transition: background 0.15s ease;
+}
+
+.inline-feedback-drag-handle:hover {
+  background: var(--interactive-accent);
+}
+
+.inline-feedback-drag-handle:active {
+  cursor: grabbing;
+}
+
+.inline-feedback-preview {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 6px 8px;
+  background: var(--background-secondary);
+  border-radius: 4px;
+  max-height: 60px;
+  overflow-y: auto;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.inline-feedback-textarea {
+  width: 100%;
+  min-height: 100px;
+  max-height: 200px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  padding: 8px 10px;
+  resize: vertical;
+  font-family: var(--font-interface);
+  font-size: 13px;
+  line-height: 1.5;
+  background: var(--background-primary);
+  color: var(--text-normal);
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.inline-feedback-textarea:focus {
+  border-color: var(--interactive-accent);
+}
+
+.inline-feedback-textarea::placeholder {
+  color: var(--text-faint);
+}
+
+.inline-feedback-btn-row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.inline-feedback-cancel-btn {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  padding: 5px 12px;
+  cursor: pointer;
+  font-size: 12px;
+  font-family: var(--font-interface);
+  transition: all 0.15s ease;
+}
+
+.inline-feedback-cancel-btn:hover {
+  color: var(--text-normal);
+  border-color: var(--text-muted);
+}
+
+.inline-feedback-submit-btn {
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  border: none;
+  border-radius: 6px;
+  padding: 5px 14px;
+  cursor: pointer;
+  font-size: 12px;
+  font-family: var(--font-interface);
+  transition: background-color 0.15s ease;
+}
+
+.inline-feedback-submit-btn:hover {
+  background: var(--interactive-accent-hover);
+}
+
+/* ---- Highlight Decoration (in editor) ---- */
+
+.inline-feedback-highlight {
+  background-color: rgba(255, 215, 0, 0.3);
+  border-bottom: 2px solid rgba(255, 165, 0, 0.6);
+  border-radius: 2px;
+}
+
+/* ---- Hover Tooltip ---- */
+
+.inline-feedback-tooltip {
+  background: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  padding: 10px 14px;
+  max-width: 350px;
+  max-height: 350px;
+  overflow-y: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  font-family: var(--font-interface);
+}
+
+.inline-feedback-tooltip-label {
+  font-size: 11px;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.inline-feedback-tooltip-text {
+  font-size: 13px;
+  color: var(--text-normal);
+  line-height: 1.5;
+  word-break: break-word;
+  white-space: pre-wrap;
+  max-height: 200px;
+  overflow-y: auto;
+  user-select: text;
+  cursor: text;
+}
+
+.inline-feedback-tooltip-img {
+  display: block;
+  max-width: 100%;
+  max-height: 160px;
+  border-radius: 4px;
+  margin: 6px 0;
+  object-fit: contain;
+}
+
+.inline-feedback-tooltip-time {
+  font-size: 11px;
+  color: var(--text-faint);
+  margin-top: 6px;
+}
+
+/* ---- Tooltip Action Buttons ---- */
+
+.inline-feedback-tooltip-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--background-modifier-border);
+}
+
+.inline-feedback-tooltip-edit-btn,
+.inline-feedback-tooltip-delete-btn {
+  font-size: 12px;
+  font-family: var(--font-interface);
+  padding: 3px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid var(--background-modifier-border);
+  background: var(--background-secondary);
+  color: var(--text-muted);
+  transition: all 0.15s ease;
+}
+
+.inline-feedback-tooltip-edit-btn:hover {
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  border-color: var(--interactive-accent);
+}
+
+.inline-feedback-tooltip-delete-btn:hover {
+  background: var(--background-modifier-error);
+  color: var(--text-error);
+  border-color: var(--text-error);
+}
+
+/* ---- Standalone Edit Popup (mounted on document.body) ---- */
+
+.inline-feedback-edit-popup {
+  background: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  padding: 10px 14px;
+  min-width: 300px;
+  max-width: 400px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+  font-family: var(--font-interface);
+}
+
+/* ---- Tooltip Edit Mode ---- */
+
+.inline-feedback-tooltip-edit-container {
+  min-width: 280px;
+}
+
+.inline-feedback-tooltip-edit-textarea {
+  width: 100%;
+  min-height: 60px;
+  max-height: 150px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  padding: 8px 10px;
+  resize: vertical;
+  font-family: var(--font-interface);
+  font-size: 13px;
+  line-height: 1.5;
+  background: var(--background-primary);
+  color: var(--text-normal);
+  outline: none;
+  transition: border-color 0.15s ease;
+  box-sizing: border-box;
+}
+
+.inline-feedback-tooltip-edit-textarea:focus {
+  border-color: var(--interactive-accent);
+}
+
+.inline-feedback-tooltip-edit-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.inline-feedback-tooltip-save-btn {
+  font-size: 12px;
+  font-family: var(--font-interface);
+  padding: 4px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  transition: background-color 0.15s ease;
+}
+
+.inline-feedback-tooltip-save-btn:hover {
+  background: var(--interactive-accent-hover);
+}
+
+.inline-feedback-tooltip-cancel-btn {
+  font-size: 12px;
+  font-family: var(--font-interface);
+  padding: 4px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid var(--background-modifier-border);
+  background: transparent;
+  color: var(--text-muted);
+  transition: all 0.15s ease;
+}
+
+.inline-feedback-tooltip-cancel-btn:hover {
+  color: var(--text-normal);
+  border-color: var(--text-muted);
+}
+
+/* ---- Sidebar View ---- */
+
+.inline-feedback-sidebar {
+  padding: 0;
+}
+
+.inline-feedback-sidebar-header {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.inline-feedback-sidebar-header h4 {
+  margin: 0 0 4px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-normal);
+}
+
+.inline-feedback-sidebar-file {
+  font-size: 12px;
+  color: var(--text-accent);
+  margin-bottom: 2px;
+}
+
+.inline-feedback-sidebar-count {
+  font-size: 11px;
+  color: var(--text-faint);
+}
+
+.inline-feedback-sidebar-empty {
+  padding: 24px 16px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.inline-feedback-sidebar-hint {
+  font-size: 11px;
+  color: var(--text-faint);
+  margin-top: 8px;
+  line-height: 1.4;
+}
+
+.inline-feedback-sidebar-list {
+  padding: 0;
+}
+
+.inline-feedback-sidebar-item {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--background-modifier-border);
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+}
+
+.inline-feedback-sidebar-item:hover {
+  background: var(--background-modifier-hover);
+}
+
+.inline-feedback-sidebar-item-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.inline-feedback-sidebar-line {
+  font-size: 11px;
+  color: var(--text-faint);
+  font-weight: 500;
+}
+
+.inline-feedback-sidebar-delete {
+  font-size: 16px;
+  color: var(--text-faint);
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+  border-radius: 3px;
+  transition: all 0.15s ease;
+}
+
+.inline-feedback-sidebar-delete:hover {
+  color: var(--text-error);
+  background: var(--background-modifier-error);
+}
+
+.inline-feedback-sidebar-original {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 4px;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.inline-feedback-sidebar-feedback {
+  font-size: 13px;
+  color: var(--text-normal);
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.inline-feedback-sidebar-time {
+  font-size: 11px;
+  color: var(--text-faint);
+  margin-top: 4px;
+}
+
+/* ============================================
+   Concept Card - Form Styles
+   ============================================ */
+
+.concept-card-form {
+  min-width: 320px;
+}
+
+.concept-card-label {
+  font-size: 11px;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+  display: block;
+}
+
+.concept-card-input {
+  width: 100%;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-family: var(--font-interface);
+  font-size: 13px;
+  background: var(--background-primary);
+  color: var(--text-normal);
+  outline: none;
+  transition: border-color 0.15s ease;
+  box-sizing: border-box;
+}
+
+.concept-card-input:focus {
+  border-color: var(--interactive-accent);
+}
+
+.concept-card-input::placeholder {
+  color: var(--text-faint);
+}
+
+.concept-card-notes {
+  min-height: 40px;
+  max-height: 100px;
+}
+
+/* Category tag buttons in card form */
+.concept-card-category-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.concept-card-category-btn {
+  font-size: 12px;
+  font-family: var(--font-interface);
+  padding: 3px 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  border: 1px solid var(--background-modifier-border);
+  background: var(--background-secondary);
+  color: var(--text-muted);
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.concept-card-category-btn:hover {
+  border-color: var(--interactive-accent);
+  color: var(--interactive-accent);
+}
+
+.concept-card-category-btn.selected {
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  border-color: var(--interactive-accent);
+}
+
+.concept-card-submit-btn {
+  background: var(--background-secondary) !important;
+  color: var(--text-normal) !important;
+  border: 1px solid var(--interactive-accent) !important;
+}
+
+.concept-card-submit-btn:hover {
+  background: var(--interactive-accent) !important;
+  color: var(--text-on-accent) !important;
+}
+
+/* ============================================
+   Concept Card - Sidebar Styles
+   ============================================ */
+
+.concept-card-sidebar {
+  padding: 0;
+}
+
+.concept-card-sidebar-header {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.concept-card-sidebar-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.concept-card-sidebar-header h4 {
+  margin: 0 0 4px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-normal);
+}
+
+.concept-card-sidebar-close {
+  font-size: 18px;
+  line-height: 1;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.concept-card-sidebar-close:hover {
+  background: var(--background-modifier-hover);
+  color: var(--text-normal);
+}
+
+.concept-card-sidebar-count {
+  font-size: 11px;
+  color: var(--text-faint);
+}
+
+/* Search */
+.concept-card-search-container {
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.concept-card-search-input {
+  width: 100%;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-family: var(--font-interface);
+  font-size: 13px;
+  background: var(--background-primary);
+  color: var(--text-normal);
+  outline: none;
+  transition: border-color 0.15s ease;
+  box-sizing: border-box;
+}
+
+.concept-card-search-input:focus {
+  border-color: var(--interactive-accent);
+}
+
+.concept-card-search-input::placeholder {
+  color: var(--text-faint);
+}
+
+/* Empty state */
+.concept-card-sidebar-empty {
+  padding: 24px 16px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.concept-card-sidebar-hint {
+  font-size: 11px;
+  color: var(--text-faint);
+  margin-top: 8px;
+  line-height: 1.4;
+}
+
+/* Card list */
+.concept-card-sidebar-list {
+  padding: 0;
+}
+
+.concept-card-sidebar-item {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--background-modifier-border);
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+}
+
+.concept-card-sidebar-item:hover {
+  background: var(--background-modifier-hover);
+}
+
+.concept-card-sidebar-item-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.concept-card-sidebar-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-normal);
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: text;
+}
+
+.concept-card-title-edit {
+  font-size: 13px;
+  font-weight: 600;
+  font-family: var(--font-interface);
+  color: var(--text-normal);
+  background: var(--background-primary);
+  border: 1px solid var(--interactive-accent);
+  border-radius: 4px;
+  padding: 1px 4px;
+  flex: 1;
+  min-width: 0;
+  outline: none;
+}
+
+.concept-card-sidebar-actions {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+  margin-left: 8px;
+}
+
+.concept-card-sidebar-action {
+  font-size: 14px;
+  color: var(--text-faint);
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+  border-radius: 3px;
+  transition: all 0.15s ease;
+}
+
+.concept-card-sidebar-action:hover {
+  color: var(--interactive-accent);
+  background: var(--background-modifier-hover);
+}
+
+.concept-card-sidebar-delete:hover {
+  color: var(--text-error) !important;
+  background: var(--background-modifier-error) !important;
+}
+
+/* Keyword tags (sidebar) */
+.concept-card-sidebar-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 6px;
+}
+
+.concept-card-sidebar-keyword-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 10px;
+  color: var(--interactive-accent);
+  background: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 10px;
+  padding: 1px 8px;
+  white-space: nowrap;
+  cursor: default;
+}
+
+.concept-card-kw-text {
+  pointer-events: none;
+}
+
+.concept-card-kw-tag-del {
+  display: none;
+  cursor: pointer;
+  font-size: 11px;
+  color: var(--text-faint);
+  margin-left: 2px;
+  line-height: 1;
+}
+
+.concept-card-sidebar-keyword-tag:hover .concept-card-kw-tag-del,
+.concept-card-kw-tag:hover .concept-card-kw-tag-del {
+  display: inline;
+}
+
+.concept-card-kw-tag-del:hover {
+  color: var(--text-error);
+}
+
+.concept-card-kw-tag-edit {
+  font-size: 11px;
+  font-family: var(--font-interface);
+  padding: 1px 6px;
+  border: 1px solid var(--interactive-accent);
+  border-radius: 10px;
+  background: var(--background-primary);
+  color: var(--text-normal);
+  outline: none;
+  width: 80px;
+  box-sizing: border-box;
+}
+
+.concept-card-kw-more {
+  color: var(--text-faint) !important;
+  font-style: italic;
+}
+
+/* Content */
+.concept-card-sidebar-content {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  word-break: break-word;
+  white-space: pre-wrap;
+  margin-bottom: 4px;
+  max-height: 120px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+/* Category filter bar in sidebar */
+.concept-card-sidebar-cat-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.concept-card-sidebar-cat-btn {
+  font-size: 11px;
+  font-family: var(--font-interface);
+  padding: 2px 8px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid var(--background-modifier-border);
+  background: var(--background-secondary);
+  color: var(--text-muted);
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.concept-card-sidebar-cat-btn:hover {
+  border-color: var(--interactive-accent);
+  color: var(--interactive-accent);
+}
+
+.concept-card-sidebar-cat-btn.selected {
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  border-color: var(--interactive-accent);
+}
+
+/* Category badges row on card item */
+.concept-card-sidebar-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+
+.concept-card-sidebar-category-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-family: var(--font-interface);
+  padding: 1px 8px;
+  border-radius: 10px;
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+}
+
+/* ---- Keyword tag container in card creation form ---- */
+.concept-card-kw-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  align-items: center;
+  padding: 4px 6px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  background: var(--background-primary);
+  min-height: 28px;
+}
+
+.concept-card-kw-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 11px;
+  font-family: var(--font-interface);
+  color: var(--interactive-accent);
+  background: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 10px;
+  padding: 1px 8px;
+  white-space: nowrap;
+  cursor: default;
+}
+
+.concept-card-kw-add-input {
+  flex: 1;
+  min-width: 80px;
+  border: none;
+  outline: none;
+  font-size: 11px;
+  font-family: var(--font-interface);
+  background: transparent;
+  color: var(--text-normal);
+  padding: 2px 4px;
+}
+
+.concept-card-kw-add-input::placeholder {
+  color: var(--text-faint);
+}
+
+/* Source info */
+.concept-card-sidebar-source {
+  font-size: 11px;
+  color: var(--text-faint);
+}
+
+/* ---- Category Group (collapsible sections) ---- */
+
+.concept-card-group {
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.concept-card-group-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  cursor: pointer;
+  background: var(--background-secondary);
+  user-select: none;
+  transition: background-color 0.1s ease;
+}
+
+.concept-card-group-header:hover {
+  background: var(--background-modifier-hover);
+}
+
+.concept-card-group-arrow {
+  font-size: 10px;
+  color: var(--text-faint);
+  width: 12px;
+  flex-shrink: 0;
+}
+
+.concept-card-group-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-normal);
+  flex: 1;
+}
+
+.concept-card-group-count {
+  font-size: 10px;
+  color: var(--text-faint);
+  background: var(--background-primary);
+  border-radius: 8px;
+  padding: 0 6px;
+  line-height: 1.6;
+}
+
+.concept-card-group-content {
+  padding: 0;
+}
+
+/* ---- Category Management ---- */
+
+.concept-card-sidebar-cat-add {
+  border-style: dashed !important;
+  color: var(--text-faint) !important;
+  font-size: 14px !important;
+  padding: 1px 8px !important;
+  line-height: 1;
+}
+
+.concept-card-sidebar-cat-add:hover {
+  border-color: var(--interactive-accent) !important;
+  color: var(--interactive-accent) !important;
+}
+
+.concept-card-sidebar-cat-input {
+  font-size: 11px;
+  font-family: var(--font-interface);
+  padding: 2px 8px;
+  border: 1px solid var(--interactive-accent);
+  border-radius: 10px;
+  background: var(--background-primary);
+  color: var(--text-normal);
+  outline: none;
+  width: 80px;
+  box-sizing: border-box;
+}
+
+/* ---- "+ 分类" link on card with no categories ---- */
+
+.concept-card-sidebar-add-cat {
+  font-size: 10px;
+  color: var(--text-faint);
+  cursor: pointer;
+  padding: 1px 8px;
+  border: 1px dashed var(--background-modifier-border);
+  border-radius: 10px;
+  transition: all 0.15s ease;
+}
+
+.concept-card-sidebar-add-cat:hover {
+  border-color: var(--interactive-accent);
+  color: var(--interactive-accent);
+}
+
+/* ---- Category Edit Popup ---- */
+
+.concept-card-cat-popup {
+  background: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+  padding: 10px 12px;
+  min-width: 180px;
+  max-width: 320px;
+  font-family: var(--font-interface);
+}
+
+.concept-card-cat-popup-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.concept-card-cat-popup-confirm {
+  display: block;
+  width: 100%;
+  font-size: 12px;
+  font-family: var(--font-interface);
+  padding: 4px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  transition: background-color 0.15s ease;
+}
+
+.concept-card-cat-popup-confirm:hover {
+  background: var(--interactive-accent-hover);
+}
+
+/* ---- Folder Tree Styles ---- */
+
+.concept-card-folder-group {
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.concept-card-folder-header {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 16px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.1s ease;
+}
+
+.concept-card-folder-header:hover {
+  background: var(--background-modifier-hover);
+}
+
+.concept-card-folder-icon {
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.concept-card-folder-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-normal);
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.concept-card-folder-actions {
+  display: flex;
+  gap: 2px;
+  flex-shrink: 0;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.concept-card-folder-header:hover .concept-card-folder-actions {
+  opacity: 1;
+}
+
+.concept-card-folder-action {
+  font-size: 14px;
+  color: var(--text-faint);
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+  border-radius: 3px;
+  transition: all 0.15s ease;
+}
+
+.concept-card-folder-action:hover {
+  color: var(--interactive-accent);
+  background: var(--background-modifier-hover);
+}
+
+.concept-card-folder-content {
+  padding: 0;
+}
+
+.concept-card-folder-card-wrapper {
+  padding: 0;
+}
+
+/* "New folder" button at root level */
+.concept-card-folder-new-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 16px;
+  font-size: 12px;
+  color: var(--text-faint);
+  cursor: pointer;
+  border-bottom: 1px solid var(--background-modifier-border);
+  transition: all 0.15s ease;
+}
+
+.concept-card-folder-new-btn:hover {
+  color: var(--interactive-accent);
+  background: var(--background-modifier-hover);
+}
+
+.concept-card-folder-input {
+  font-size: 12px;
+  font-family: var(--font-interface);
+  padding: 4px 8px;
+  border: 1px solid var(--interactive-accent);
+  border-radius: 6px;
+  background: var(--background-primary);
+  color: var(--text-normal);
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ---- Folder Create / Rename Popup ---- */
+
+.concept-card-folder-create-popup {
+  background: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.22);
+  padding: 16px;
+  min-width: 260px;
+  max-width: 360px;
+  font-family: var(--font-interface);
+}
+
+.concept-card-folder-create-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-normal);
+  margin-bottom: 10px;
+}
+
+.concept-card-folder-create-btns {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.concept-card-folder-create-btns button {
+  flex: 1;
+}
+
+/* ---- Move to Folder Dialog ---- */
+
+.concept-card-move-popup {
+  background: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.22);
+  padding: 16px;
+  min-width: 260px;
+  max-width: 360px;
+  max-height: 400px;
+  font-family: var(--font-interface);
+}
+
+.concept-card-move-popup-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-normal);
+  margin-bottom: 12px;
+}
+
+.concept-card-move-popup-list {
+  max-height: 280px;
+  overflow-y: auto;
+  margin-bottom: 12px;
+}
+
+.concept-card-move-popup-item {
+  padding: 6px 12px;
+  font-size: 13px;
+  color: var(--text-normal);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.concept-card-move-popup-item:hover {
+  background: var(--background-modifier-hover);
+}
+
+.concept-card-move-popup-item.current {
+  background: var(--background-secondary);
+  color: var(--interactive-accent);
+  font-weight: 500;
+}
+
+.concept-card-move-popup-cancel {
+  display: block;
+  width: 100%;
+  font-size: 12px;
+  font-family: var(--font-interface);
+  padding: 5px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid var(--background-modifier-border);
+  background: transparent;
+  color: var(--text-muted);
+  transition: all 0.15s ease;
+}
+
+.concept-card-move-popup-cancel:hover {
+  color: var(--text-normal);
+  border-color: var(--text-muted);
+}
+
+/* ---- Drag & Drop ---- */
+
+.concept-card-sidebar-item[draggable="true"] {
+  cursor: grab;
+}
+
+.concept-card-sidebar-item.dragging {
+  opacity: 0.4;
+  cursor: grabbing;
+}
+
+.concept-card-folder-header.drag-over,
+.concept-card-unfiled-zone.drag-over {
+  background: var(--interactive-accent) !important;
+  opacity: 0.15;
+  border-radius: 4px;
+}
+
+.concept-card-folder-header.drag-over {
+  outline: 2px dashed var(--interactive-accent);
+  outline-offset: -2px;
+  background: transparent !important;
+}
+
+.concept-card-unfiled-zone.drag-over {
+  outline: 2px dashed var(--interactive-accent);
+  outline-offset: -2px;
+  background: transparent !important;
+}
+
+/* ---- Unfiled zone ---- */
+
+.concept-card-unfiled-zone {
+  border-radius: 4px;
+  transition: outline-color 0.15s ease, background-color 0.15s ease;
+}
+
+.concept-card-unfiled-label {
+  font-size: 11px;
+  color: var(--text-faint);
+  padding: 6px 16px 2px 16px;
+  font-weight: 500;
+}
+
+/* ---- Category group [+] folder button ---- */
+
+.concept-card-group-add-folder {
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  margin-left: auto;
+  margin-right: 4px;
+}
+
+.concept-card-group-header:hover .concept-card-group-add-folder {
+  opacity: 1;
+}
