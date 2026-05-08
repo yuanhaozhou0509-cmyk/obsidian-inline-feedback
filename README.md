@@ -1,6 +1,8 @@
 ﻿# Inline Feedback
 
-Inline Feedback is an Obsidian plugin for lightweight text-level review. Select text, attach precise feedback, and let Codex, Claude Code, OpenClaw, Hermes Agent, or another AI agent read the saved feedback files directly from your Obsidian vault.
+Inline Feedback is an Obsidian plugin for precise feedback in AI-agent writing workflows.
+
+When you use Codex, Claude Code (CC), OpenClaw, Hermes Agent, or another AI agent to revise Markdown, the hard part is often not whether the agent can edit. The hard part is making it understand exactly which sentence you mean and what you want changed. Inline Feedback lets you select text in Obsidian, write feedback on that exact span, and save the feedback beside the note so your agent can read it directly from the vault.
 
 [中文说明](README.zh-CN.md)
 
@@ -8,17 +10,17 @@ Inline Feedback is an Obsidian plugin for lightweight text-level review. Select 
 
 ## What It Does
 
-- Select text in a Markdown note and add inline feedback without rewriting the note.
-- Keep feedback next to the source note in `<note>.feedback.json`.
+- Select text in a Markdown note and attach precise feedback without rewriting the note.
+- Save feedback next to the source note in `<note>.feedback.json`.
 - Review, edit, delete, and navigate annotations from a sidebar.
-- Let coding and writing agents read `<note>.feedback.json` directly from the vault.
-- Optionally export a readable Markdown summary to `<note>.feedback_export.md`.
+- Let Codex, Claude Code, OpenClaw, Hermes Agent, and similar tools read feedback directly from the vault.
+- Optionally export a readable Markdown summary only when an AI tool cannot access your local files.
 - Append review items to `feedback_log.md` for project-level tracking.
 - Save high-value excerpts as Knowledge Cards for reuse in later writing.
 
-Inline Feedback is useful for AI-assisted writing, shared vault review, editorial passes, research notes, and workflows where one machine or account marks up text and another AI or agent performs the revision.
+Inline Feedback is useful for AI-assisted writing, shared vault review, editorial passes, research notes, and workflows where one computer or account marks up text while another AI workstation performs the revision.
 
-It is especially useful when you work with agent tools such as Codex, Claude Code, OpenClaw, Hermes Agent, or similar local/remote AI workstations. Instead of describing feedback loosely in chat, you mark the exact sentence or paragraph in Obsidian. The agent can then inspect the companion `.feedback.json` file and understand exactly what text you meant and what change you want.
+Instead of saying "look at this part" in chat, you mark the exact sentence or paragraph in Obsidian. Your agent can inspect the companion `.feedback.json` file and revise with much less guessing.
 
 ## Why It Exists
 
@@ -37,7 +39,7 @@ No server is involved. The plugin only writes files inside your vault.
 
 ## Screenshots
 
-| Add precise feedback | Optional AI-readable summary |
+| Add precise feedback | Agent-readable feedback file |
 | --- | --- |
 | ![Add feedback](docs/assets/inline-feedback-demo.svg) | ![Export summary](docs/assets/export-demo.svg) |
 
@@ -49,38 +51,19 @@ The screenshots use the safe sample note in [`docs/demo-note.md`](docs/demo-note
 
 ## Installation
 
-### BRAT
+Use BRAT. This is the simplest way to install the plugin before it is listed in the official Obsidian community plugin directory.
 
-1. Install the Obsidian BRAT plugin.
-2. In BRAT, choose `Add beta plugin`.
-3. Enter:
+1. In Obsidian, install and enable the `BRAT` community plugin.
+2. Open `BRAT` settings and choose `Add beta plugin`.
+3. Paste this link:
 
 ```text
 https://github.com/yuanhaozhou0509-cmyk/obsidian-inline-feedback
 ```
 
-4. Enable `Inline Feedback` in Obsidian community plugins.
+4. Confirm, then enable `Inline Feedback` in Obsidian community plugins.
 
-### Manual Install
-
-1. Download `main.js`, `manifest.json`, and `styles.css` from the latest GitHub Release.
-2. Create this folder in your vault:
-
-```text
-<vault>/.obsidian/plugins/inline-feedback/
-```
-
-3. Put the three files in that folder.
-4. Reload Obsidian and enable `Inline Feedback`.
-
-### Build From Source
-
-```bash
-npm install
-npm run build
-```
-
-Then copy `main.js`, `manifest.json`, and `styles.css` into your test vault plugin folder.
+Advanced manual install: download `main.js`, `manifest.json`, and `styles.css` from the latest GitHub Release and place them in `<vault>/.obsidian/plugins/inline-feedback/`.
 
 ## Basic Workflow
 
@@ -88,9 +71,9 @@ Then copy `main.js`, `manifest.json`, and `styles.css` into your test vault plug
 2. Select a sentence or paragraph.
 3. Click `Add feedback` in the floating popup, or use the editor context menu.
 4. Write feedback and press `Ctrl+Enter`.
-5. Open the feedback panel from the ribbon icon or command palette.
+5. Open the feedback panel from the ribbon icon or command palette if you want to review all feedback.
 6. Ask your AI agent to read the `.feedback.json` next to the note and revise accordingly.
-7. Optionally export a Markdown summary if you prefer to paste a human-readable feedback file into chat.
+7. Export Markdown only if the AI tool cannot access your vault files directly.
 
 Example instruction for an AI assistant or coding agent:
 

@@ -1,6 +1,8 @@
 ﻿# Inline Feedback
 
-Inline Feedback 是一个 Obsidian 插件，用来做轻量的逐句批注。你可以选中文本、写精确反馈，然后让 Codex、Claude Code、OpenClaw、Hermes Agent 或其他 AI Agent 直接读取 Obsidian vault 里的反馈文件并按要求修改。
+Inline Feedback 是一个给 Obsidian + AI Agent 工作流用的精细化批注插件。
+
+当你用 Codex、Claude Code（CC）、OpenClaw、Hermes Agent 等工具修改 Markdown 文章时，真正麻烦的往往不是“AI 会不会改”，而是它不知道你说的“这里”到底是哪一句、你想怎么改。Inline Feedback 让你在 Obsidian 里直接选中文字、写 feedback，并把反馈保存在笔记旁边。Agent 可以直接读取这些反馈文件，更准确地按你的标注修改。
 
 [English README](README.md)
 
@@ -11,14 +13,14 @@ Inline Feedback 是一个 Obsidian 插件，用来做轻量的逐句批注。你
 - 在 Markdown 笔记中选中文本并添加内联反馈，不直接改动原文。
 - 将反馈保存在同目录的 `<note>.feedback.json`。
 - 在侧边栏查看、删除、跳转到对应标注。
-- 让 Codex、Claude Code、OpenClaw、Hermes Agent 等工具直接读取 `<note>.feedback.json`。
-- 可选导出 `<note>.feedback_export.md`，方便复制给不能访问本地文件的 AI。
+- 让 Codex、Claude Code、OpenClaw、Hermes Agent 等工具直接读取反馈文件。
+- 只有当某个 AI 不能访问你的本地文件时，才需要可选导出 `<note>.feedback_export.md`。
 - 将反馈追加到 `feedback_log.md`，便于项目级追踪。
 - 将高价值原文片段保存成 Knowledge Cards，后续写作时复用。
 
-这个插件适合 AI 辅助写作、共享 vault 审稿、研究笔记整理，以及“一个环境负责标注，另一个 AI/Agent 环境负责修改”的工作流。
+这个插件适合 AI 辅助写作、共享 vault 审稿、研究笔记整理，以及“你在自己的电脑上标注，Agent 在另一个环境里修改”的工作流。
 
-它尤其适合使用 Codex、Claude Code、OpenClaw、Hermes Agent 或类似本地/远程 Agent 工作站的人。你不需要在聊天里笼统描述“帮我改这里”，而是在 Obsidian 里直接标出具体句子或段落，并写下精细化 feedback。Agent 读取同目录的 `.feedback.json` 后，就能更高效、更准确地知道你指的是哪段文字、想怎么改。
+你不需要在聊天里笼统描述“帮我改这里”，而是在 Obsidian 里直接标出具体句子或段落，并写下精细化 feedback。Agent 读取同目录的 `.feedback.json` 后，就能更高效、更准确地知道你指的是哪段文字、想怎么改。
 
 ## 为什么需要它
 
@@ -37,38 +39,19 @@ knowledge_cards/_library.md
 
 ## 安装
 
-### 用 BRAT 安装
+用 BRAT 安装最简单。这个插件进入 Obsidian 官方插件市场之前，先用这种方式安装。
 
-1. 先安装 Obsidian 的 BRAT 插件。
-2. 在 BRAT 里选择 `Add beta plugin`。
-3. 输入：
+1. 在 Obsidian 里安装并启用 `BRAT`。
+2. 打开 `BRAT` 设置，点击 `Add beta plugin`。
+3. 粘贴这个链接：
 
 ```text
 https://github.com/yuanhaozhou0509-cmyk/obsidian-inline-feedback
 ```
 
-4. 到 Obsidian 社区插件页面启用 `Inline Feedback`。
+4. 确认安装，然后回到 Obsidian 第三方插件页面启用 `Inline Feedback`。
 
-### 手动安装
-
-1. 从最新 GitHub Release 下载 `main.js`、`manifest.json`、`styles.css`。
-2. 在 vault 里创建目录：
-
-```text
-<vault>/.obsidian/plugins/inline-feedback/
-```
-
-3. 把三个文件放进去。
-4. 重启或刷新 Obsidian，然后启用插件。
-
-### 从源码构建
-
-```bash
-npm install
-npm run build
-```
-
-然后把 `main.js`、`manifest.json`、`styles.css` 复制到测试 vault 的插件目录。
+高级手动安装：从最新 GitHub Release 下载 `main.js`、`manifest.json`、`styles.css`，放到 `<vault>/.obsidian/plugins/inline-feedback/`。
 
 ## 基本工作流
 
@@ -76,9 +59,9 @@ npm run build
 2. 选中一句话或一段话。
 3. 点击浮窗里的 `Add feedback`，或在右键菜单里添加反馈。
 4. 写反馈，按 `Ctrl+Enter` 保存。
-5. 从侧边栏图标或命令面板打开反馈面板。
-6. 需要 AI 修改时，直接让 Agent 看同目录的 `.feedback.json`。
-7. 如果某个 AI 不能访问你的本地文件，再可选导出 `.feedback_export.md` 并复制给它。
+5. 如果想集中查看所有 feedback，可以打开右侧 Inline Feedback 面板。
+6. 需要 AI 修改时，直接让 Codex、Claude Code、OpenClaw、Hermes Agent 等 Agent 看同目录的 `.feedback.json`。
+7. 只有当某个 AI 不能访问你的本地文件时，才需要导出 `.feedback_export.md`。
 
 可以这样提示 AI 或 coding agent：
 
