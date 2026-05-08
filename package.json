@@ -1,4 +1,4 @@
-{
+﻿{
   "name": "obsidian-inline-feedback",
   "version": "1.0.0",
   "description": "Inline feedback annotations for Obsidian, built for AI-assisted writing and shared vault review workflows.",
@@ -15,16 +15,16 @@
     "ai-writing",
     "review"
   ],
-  "author": "zyh14",
+  "author": "yuanhaozhou0509-cmyk",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/zyh14/obsidian-inline-feedback.git"
+    "url": "https://github.com/yuanhaozhou0509-cmyk/obsidian-inline-feedback.git"
   },
   "bugs": {
-    "url": "https://github.com/zyh14/obsidian-inline-feedback/issues"
+    "url": "https://github.com/yuanhaozhou0509-cmyk/obsidian-inline-feedback/issues"
   },
-  "homepage": "https://github.com/zyh14/obsidian-inline-feedback#readme",
+  "homepage": "https://github.com/yuanhaozhou0509-cmyk/obsidian-inline-feedback#readme",
   "devDependencies": {
     "@codemirror/state": "^6.0.0",
     "@codemirror/view": "^6.0.0",
@@ -36,3 +36,4 @@
     "typescript": "4.7.4"
   }
 }
+

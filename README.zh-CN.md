@@ -1,4 +1,4 @@
-# Inline Feedback
+﻿# Inline Feedback
 
 Inline Feedback 是一个 Obsidian 插件，用来做轻量的逐句批注。你可以选中文本、写反馈、在侧边栏查看所有标注，并导出结构化文件，让 AI 助手或写作 Agent 按照反馈修改文章。
 
@@ -41,7 +41,7 @@ knowledge_cards/_library.md
 3. 输入：
 
 ```text
-https://github.com/zyh14/obsidian-inline-feedback
+https://github.com/yuanhaozhou0509-cmyk/obsidian-inline-feedback
 ```
 
 4. 到 Obsidian 社区插件页面启用 `Inline Feedback`。
@@ -110,4 +110,5 @@ Release tag 必须和 `manifest.json` 里的 `version` 一致。
 ## 许可证
 
 MIT。见 [LICENSE](LICENSE)。
+
 

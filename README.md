@@ -1,4 +1,4 @@
-# Inline Feedback
+﻿# Inline Feedback
 
 Inline Feedback is an Obsidian plugin for lightweight text-level review. Select text, attach feedback, review annotations in a sidebar, and export structured notes that an AI assistant or writing agent can use for revision.
 
@@ -53,7 +53,7 @@ The screenshots use the safe sample note in [`docs/demo-note.md`](docs/demo-note
 3. Enter:
 
 ```text
-https://github.com/zyh14/obsidian-inline-feedback
+https://github.com/yuanhaozhou0509-cmyk/obsidian-inline-feedback
 ```
 
 4. Enable `Inline Feedback` in Obsidian community plugins.
@@ -149,4 +149,5 @@ The release tag must match the `version` in `manifest.json`.
 ## License
 
 MIT. See [LICENSE](LICENSE).
+
 
