@@ -1,7 +1,7 @@
 ﻿{
   "name": "obsidian-inline-feedback",
   "version": "1.0.0",
-  "description": "Inline feedback annotations for Obsidian, built for AI-assisted writing and shared vault review workflows.",
+  "description": "Precise inline feedback for Obsidian notes, built for AI agents and shared vault review workflows.",
   "main": "main.js",
   "scripts": {
     "dev": "node esbuild.config.mjs",

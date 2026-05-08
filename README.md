@@ -1,6 +1,6 @@
 ﻿# Inline Feedback
 
-Inline Feedback is an Obsidian plugin for lightweight text-level review. Select text, attach feedback, review annotations in a sidebar, and export structured notes that an AI assistant or writing agent can use for revision.
+Inline Feedback is an Obsidian plugin for lightweight text-level review. Select text, attach precise feedback, and let Codex, Claude Code, OpenClaw, Hermes Agent, or another AI agent read the saved feedback files directly from your Obsidian vault.
 
 [中文说明](README.zh-CN.md)
 
@@ -11,11 +11,14 @@ Inline Feedback is an Obsidian plugin for lightweight text-level review. Select 
 - Select text in a Markdown note and add inline feedback without rewriting the note.
 - Keep feedback next to the source note in `<note>.feedback.json`.
 - Review, edit, delete, and navigate annotations from a sidebar.
-- Export a readable Markdown summary to `<note>.feedback_export.md`.
+- Let coding and writing agents read `<note>.feedback.json` directly from the vault.
+- Optionally export a readable Markdown summary to `<note>.feedback_export.md`.
 - Append review items to `feedback_log.md` for project-level tracking.
 - Save high-value excerpts as Knowledge Cards for reuse in later writing.
 
 Inline Feedback is useful for AI-assisted writing, shared vault review, editorial passes, research notes, and workflows where one machine or account marks up text and another AI or agent performs the revision.
+
+It is especially useful when you work with agent tools such as Codex, Claude Code, OpenClaw, Hermes Agent, or similar local/remote AI workstations. Instead of describing feedback loosely in chat, you mark the exact sentence or paragraph in Obsidian. The agent can then inspect the companion `.feedback.json` file and understand exactly what text you meant and what change you want.
 
 ## Why It Exists
 
@@ -34,7 +37,7 @@ No server is involved. The plugin only writes files inside your vault.
 
 ## Screenshots
 
-| Add feedback | Export for AI revision |
+| Add precise feedback | Optional AI-readable summary |
 | --- | --- |
 | ![Add feedback](docs/assets/inline-feedback-demo.svg) | ![Export summary](docs/assets/export-demo.svg) |
 
@@ -86,9 +89,10 @@ Then copy `main.js`, `manifest.json`, and `styles.css` into your test vault plug
 3. Click `Add feedback` in the floating popup, or use the editor context menu.
 4. Write feedback and press `Ctrl+Enter`.
 5. Open the feedback panel from the ribbon icon or command palette.
-6. Export feedback when you want an AI assistant to revise the note.
+6. Ask your AI agent to read the `.feedback.json` next to the note and revise accordingly.
+7. Optionally export a Markdown summary if you prefer to paste a human-readable feedback file into chat.
 
-Example instruction for an AI assistant:
+Example instruction for an AI assistant or coding agent:
 
 ```text
 Please revise my-note.md according to my-note.feedback.json.
@@ -120,7 +124,7 @@ For each annotation, use originalText as the target span and feedback as the req
 
 ### `<note>.feedback_export.md`
 
-A readable Markdown summary designed for review and AI revision prompts.
+A readable Markdown summary for users who prefer to paste feedback into chat. This is optional; agents that can access your vault can use `<note>.feedback.json` directly.
 
 ### `feedback_log.md`
 

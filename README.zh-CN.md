@@ -1,6 +1,6 @@
 ﻿# Inline Feedback
 
-Inline Feedback 是一个 Obsidian 插件，用来做轻量的逐句批注。你可以选中文本、写反馈、在侧边栏查看所有标注，并导出结构化文件，让 AI 助手或写作 Agent 按照反馈修改文章。
+Inline Feedback 是一个 Obsidian 插件，用来做轻量的逐句批注。你可以选中文本、写精确反馈，然后让 Codex、Claude Code、OpenClaw、Hermes Agent 或其他 AI Agent 直接读取 Obsidian vault 里的反馈文件并按要求修改。
 
 [English README](README.md)
 
@@ -11,11 +11,14 @@ Inline Feedback 是一个 Obsidian 插件，用来做轻量的逐句批注。你
 - 在 Markdown 笔记中选中文本并添加内联反馈，不直接改动原文。
 - 将反馈保存在同目录的 `<note>.feedback.json`。
 - 在侧边栏查看、删除、跳转到对应标注。
-- 导出 `<note>.feedback_export.md`，方便复制给 AI 修改文章。
+- 让 Codex、Claude Code、OpenClaw、Hermes Agent 等工具直接读取 `<note>.feedback.json`。
+- 可选导出 `<note>.feedback_export.md`，方便复制给不能访问本地文件的 AI。
 - 将反馈追加到 `feedback_log.md`，便于项目级追踪。
 - 将高价值原文片段保存成 Knowledge Cards，后续写作时复用。
 
 这个插件适合 AI 辅助写作、共享 vault 审稿、研究笔记整理，以及“一个环境负责标注，另一个 AI/Agent 环境负责修改”的工作流。
+
+它尤其适合使用 Codex、Claude Code、OpenClaw、Hermes Agent 或类似本地/远程 Agent 工作站的人。你不需要在聊天里笼统描述“帮我改这里”，而是在 Obsidian 里直接标出具体句子或段落，并写下精细化 feedback。Agent 读取同目录的 `.feedback.json` 后，就能更高效、更准确地知道你指的是哪段文字、想怎么改。
 
 ## 为什么需要它
 
@@ -74,9 +77,10 @@ npm run build
 3. 点击浮窗里的 `Add feedback`，或在右键菜单里添加反馈。
 4. 写反馈，按 `Ctrl+Enter` 保存。
 5. 从侧边栏图标或命令面板打开反馈面板。
-6. 需要 AI 修改时，导出 `.feedback.json` 或 `.feedback_export.md`。
+6. 需要 AI 修改时，直接让 Agent 看同目录的 `.feedback.json`。
+7. 如果某个 AI 不能访问你的本地文件，再可选导出 `.feedback_export.md` 并复制给它。
 
-可以这样提示 AI：
+可以这样提示 AI 或 coding agent：
 
 ```text
 请按照 my-note.feedback.json 修改 my-note.md。
@@ -86,8 +90,8 @@ npm run build
 
 ## 数据文件
 
-- `<note>.feedback.json`：结构化标注，最适合给 AI/Agent 使用。
-- `<note>.feedback_export.md`：适合人读的反馈汇总。
+- `<note>.feedback.json`：结构化标注，最适合给 AI/Agent 直接读取。
+- `<note>.feedback_export.md`：适合人读的反馈汇总，是可选导出，不是日常必需步骤。
 - `feedback_log.md`：项目级反馈日志。
 - `knowledge_cards/`：可复用知识卡片库，包含 `_library.json` 和 `_library.md`。
 
