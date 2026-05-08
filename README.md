@@ -1,8 +1,10 @@
 ﻿# Inline Feedback
 
-Inline Feedback is an Obsidian plugin for precise feedback in AI-agent writing workflows.
+Inline Feedback is an Obsidian plugin for precise feedback in Obsidian-based AI agent workflows.
 
-When you use Codex, Claude Code (CC), OpenClaw, Hermes Agent, or another AI agent to revise Markdown, the hard part is often not whether the agent can edit. The hard part is making it understand exactly which sentence you mean and what you want changed. Inline Feedback lets you select text in Obsidian, write feedback on that exact span, and save the feedback beside the note so your agent can read it directly from the vault.
+When you use Codex, Claude Code (CC), OpenClaw, Hermes Agent, or another AI agent with Obsidian as the output surface, the hard part is often not whether the agent can generate or edit content. The hard part is making it understand exactly which line, paragraph, claim, plan, note, or section you are responding to.
+
+Inline Feedback gives Obsidian a local feedback layer for that workflow. Select any Markdown text, attach precise feedback to that exact span, and save it beside the note so your agent can read it directly from the vault.
 
 [中文说明](README.zh-CN.md)
 
@@ -10,21 +12,21 @@ When you use Codex, Claude Code (CC), OpenClaw, Hermes Agent, or another AI agen
 
 ## What It Does
 
-- Select text in a Markdown note and attach precise feedback without rewriting the note.
+- Select text in any Markdown note and attach precise feedback without rewriting the note.
 - Save feedback next to the source note in `<note>.feedback.json`.
 - Review, edit, delete, and navigate annotations from a sidebar.
 - Let Codex, Claude Code, OpenClaw, Hermes Agent, and similar tools read feedback directly from the vault.
 - Optionally export a readable Markdown summary only when an AI tool cannot access your local files.
 - Append review items to `feedback_log.md` for project-level tracking.
-- Save high-value excerpts as Knowledge Cards for reuse in later writing.
+- Save high-value excerpts as Knowledge Cards for reuse in later work.
 
-Inline Feedback is useful for AI-assisted writing, shared vault review, editorial passes, research notes, and workflows where one computer or account marks up text while another AI workstation performs the revision.
+Inline Feedback is useful for AI-assisted writing, research notes, specs, reports, plans, knowledge bases, shared vault review, and any workflow where Obsidian is the place you inspect AI output and give feedback back to an agent.
 
-Instead of saying "look at this part" in chat, you mark the exact sentence or paragraph in Obsidian. Your agent can inspect the companion `.feedback.json` file and revise with much less guessing.
+Instead of saying "look at this part" in chat, you mark the exact sentence, paragraph, checklist item, or section in Obsidian. Your agent can inspect the companion `.feedback.json` file and respond with much less guessing.
 
 ## Why It Exists
 
-Markdown is excellent for writing, but it does not have a simple Google Docs-style comment layer that stays local, syncs with an Obsidian vault, and is easy for AI tools to consume. Inline Feedback fills that gap with plain local files:
+Markdown is excellent as an AI working surface, but it does not have a simple Google Docs-style comment layer that stays local, syncs with an Obsidian vault, and is easy for AI tools to consume. Inline Feedback fills that gap with plain local files:
 
 ```text
 my-note.md
@@ -72,14 +74,14 @@ Advanced manual install: download `main.js`, `manifest.json`, and `styles.css` f
 3. Click `Add feedback` in the floating popup, or use the editor context menu.
 4. Write feedback and press `Ctrl+Enter`.
 5. Open the feedback panel from the ribbon icon or command palette if you want to review all feedback.
-6. Ask your AI agent to read the `.feedback.json` next to the note and revise accordingly.
+6. Ask your AI agent to read the `.feedback.json` next to the note and respond, revise, continue, or implement accordingly.
 7. Export Markdown only if the AI tool cannot access your vault files directly.
 
 Example instruction for an AI assistant or coding agent:
 
 ```text
-Please revise my-note.md according to my-note.feedback.json.
-Preserve the original structure where possible.
+Please continue from my-note.md according to my-note.feedback.json.
+Address each feedback item precisely and preserve the original structure where possible.
 For each annotation, use originalText as the target span and feedback as the requested change.
 ```
 

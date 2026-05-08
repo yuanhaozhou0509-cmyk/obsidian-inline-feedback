@@ -3,7 +3,7 @@
   "name": "Inline Feedback",
   "version": "1.0.0",
   "minAppVersion": "1.0.0",
-  "description": "Precise inline feedback for Obsidian notes, built for AI agents and shared vault review workflows.",
+  "description": "Precise local feedback for Obsidian notes, built for AI agent collaboration workflows.",
   "author": "yuanhaozhou0509-cmyk",
   "isDesktopOnly": true
 }

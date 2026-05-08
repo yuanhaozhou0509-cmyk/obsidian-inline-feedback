@@ -1,7 +1,7 @@
 ﻿{
   "name": "obsidian-inline-feedback",
   "version": "1.0.0",
-  "description": "Precise inline feedback for Obsidian notes, built for AI agents and shared vault review workflows.",
+  "description": "Precise local feedback for Obsidian notes, built for AI agent collaboration workflows.",
   "main": "main.js",
   "scripts": {
     "dev": "node esbuild.config.mjs",
@@ -12,7 +12,8 @@
     "obsidian-plugin",
     "inline-feedback",
     "annotation",
-    "ai-writing",
+    "ai-agent",
+    "ai-workflow",
     "review"
   ],
   "author": "yuanhaozhou0509-cmyk",
